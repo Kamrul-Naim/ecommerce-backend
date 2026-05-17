@@ -40,6 +40,7 @@ This project includes authentication, authorization, product management, validat
 
 # Project Structure
 
+```bash
 src/
 │
 ├── config/
@@ -62,28 +63,37 @@ src/
 │
 ├── app.js
 └── server.js
+```
 
+---
 
 # Installation
 
 ## Clone Repository
 
+```bash
 git clone YOUR_REPOSITORY_LINK
-
+```
 
 ## Move Into Project Folder
 
+```bash
 cd ecommerce-backend
+```
 
 ## Install Dependencies
 
+```bash
 npm install
+```
 
+---
 
 # Environment Variables
 
 Create a `.env` file in the root directory and add:
 
+```env
 PORT=5000
 
 DATABASE_URL=your_mongodb_connection_url
@@ -91,81 +101,103 @@ DATABASE_URL=your_mongodb_connection_url
 JWT_SECRET=your_secret_key
 
 NODE_ENV=development
+```
 
+---
 
 # Run Project
 
 ## Development Mode
 
+```bash
 npm run dev
-
+```
 
 ## Production Mode
 
+```bash
 npm start
+```
 
+---
 
 # API Base URL
 
+```bash
 http://localhost:5000/api/v1
+```
 
-
+---
 
 # Authentication Endpoints
 
 ## Register User
 
+```http
 POST /users
-
+```
 
 ## Login User
 
+```http
 POST /auth/login
+```
 
+---
 
 # Product Endpoints
 
 ## Get All Products
 
+```http
 GET /products
-
+```
 
 ## Get Single Product
 
+```http
 GET /products/:id
-
+```
 
 ## Create Product (Admin Only)
 
+```http
 POST /products
-
+```
 
 ## Update Product (Admin Only)
 
+```http
 PATCH /products/:id
-
+```
 
 ## Delete Product (Admin Only)
 
+```http
 DELETE /products/:id
+```
 
-
+---
 
 # Query Features
 
 ## Search
 
+```http
 /products?searchTerm=iphone
-
+```
 
 ## Filter
 
+```http
 /products?category=Electronics
+```
 
 ## Pagination
 
+```http
 /products?page=1&limit=5
-
+```
 
 ---
 
