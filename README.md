@@ -1,40 +1,43 @@
 # Ecommerce Backend API
 
 A production-style Ecommerce Backend API built with Express.js, MongoDB, and Mongoose.
-This project includes authentication, authorization, product management, validation, centralized error handling, filtering, searching, pagination, and security middleware.
+
+This project includes authentication, authorization, product management, order management, validation, centralized error handling, filtering, searching, pagination, and security middleware.
 
 ---
 
 # Features
 
-* JWT Authentication
-* Role-Based Authorization
-* User Registration & Login
-* Product CRUD Operations
-* Search Functionality
-* Filtering & Pagination
-* Request Validation using Zod
-* Centralized Error Handling
-* Async Error Wrapper
-* Secure Password Hashing
-* Security Middleware (Helmet, Rate Limiting, CORS)
-* Modular Scalable Architecture
+- JWT Authentication
+- Role-Based Authorization
+- User Registration & Login
+- Product CRUD Operations
+- Order Management System
+- Search Functionality
+- Filtering & Pagination
+- Request Validation using Zod
+- Centralized Error Handling
+- Async Error Wrapper
+- Secure Password Hashing
+- Security Middleware (Helmet, Rate Limiting, CORS)
+- SSLCommerz Payment Integration Basics
 
 ---
 
 # Tech Stack
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* JWT (jsonwebtoken)
-* bcryptjs
-* Zod
-* Helmet
-* Express Rate Limit
-* CORS
-* Dotenv
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT (jsonwebtoken)
+- bcryptjs
+- Zod
+- Helmet
+- Express Rate Limit
+- CORS
+- Dotenv
+- SSLCommerz
 
 ---
 
@@ -53,7 +56,9 @@ src/
 ├── modules/
 │   ├── auth/
 │   ├── user/
-│   └── product/
+│   ├── product/
+│   ├── order/
+│   └── payment/
 │
 ├── routes/
 │   └── api.js
@@ -78,7 +83,7 @@ git clone YOUR_REPOSITORY_LINK
 ## Move Into Project Folder
 
 ```bash
-cd ecommerce-backend
+cd ecommerce-backend-api
 ```
 
 ## Install Dependencies
@@ -101,6 +106,10 @@ DATABASE_URL=your_mongodb_connection_url
 JWT_SECRET=your_secret_key
 
 NODE_ENV=development
+
+STORE_ID=your_sslcommerz_store_id
+
+STORE_PASSWORD=your_sslcommerz_store_password
 ```
 
 ---
@@ -179,37 +188,41 @@ DELETE /products/:id
 
 ---
 
-# Query Features
+# Order Endpoints
 
-## Search
+## Create Order
 
 ```http
-/products?searchTerm=iphone
+POST /orders
 ```
 
-## Filter
+## Get My Orders
 
 ```http
-/products?category=Electronics
+GET /orders/my-orders
 ```
 
-## Pagination
+---
+
+# Payment Endpoints
+
+## Initiate Payment
 
 ```http
-/products?page=1&limit=5
+POST /payments/initiate-payment/:orderId
 ```
 
 ---
 
 # Security Features
 
-* Password Hashing with bcryptjs
-* JWT Authentication
-* Role-Based Authorization
-* Helmet Security Headers
-* Rate Limiting
-* Secure CORS Configuration
-* Request Validation using Zod
+- Password Hashing with bcryptjs
+- JWT Authentication
+- Role-Based Authorization
+- Helmet Security Headers
+- Rate Limiting
+- Secure CORS Configuration
+- Request Validation using Zod
 
 ---
 
@@ -217,32 +230,28 @@ DELETE /products/:id
 
 This project was built to understand real-world backend development concepts including:
 
-* REST API Architecture
-* Express Middleware Flow
-* Authentication & Authorization
-* MongoDB Relationships
-* Error Handling
-* Validation Layer
-* Production-Style Backend Structure
+- REST API Architecture
+- Express Middleware Flow
+- Authentication & Authorization
+- MongoDB Relationships
+- Error Handling
+- Validation Layer
+- Production-Style Backend Structure
+- Payment Gateway Integration
 
 ---
 
 # Future Improvements
 
-* Order Management
-* Cart System
-* Reviews & Ratings
-* Payment Integration
-* File Uploads
-* Refresh Tokens
-* Docker Support
-* Automated Testing
+- Cart System
+- Reviews & Ratings
+- File Uploads
+- Refresh Tokens
+- Docker Support
+- Automated Testing
 
 ---
 
 # Author
 
 Kamrul Hasan
-
-```
-```
